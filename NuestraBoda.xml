@@ -19,7 +19,7 @@
   </style>
 </head>
 <body>
-  <img id="FlorFP.png" src="FlorFP.png" alt="Imagen con brillo">
+  <img id="FlorFP.png" src="NuestraBoda\FlorFP.png" alt="Imagen con brillo">
 
   <script>
     // Fecha de inicio (puedes cambiarla)
