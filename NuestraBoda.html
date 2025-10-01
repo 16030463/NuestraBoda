@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Imagen con brillo progresivo</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #111;
+    }
+    img {
+      width: 400px;
+      height: auto;
+      transition: filter 1s ease; /* transición suave */
+    }
+  </style>
+</head>
+<body>
+  <img id="FlorFP.png" src="NuestraBoda\FlorFP.png" alt="Imagen con brillo">
 
+  <script>
+    // Fecha de inicio (puedes cambiarla)
+    const fechaInicio = new Date("2025-10-01"); 
+
+    // Fecha actual
+    const hoy = new Date();
+
+    // Diferencia en días
+    const diffTime = hoy - fechaInicio;
+    const diasPasados = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    // Limitar entre 0 y 30
+    const dias = Math.min(Math.max(diasPasados, 0), 30);
+
+    // Calcular brillo (1 = normal, 2 = muy brillante)
+    const brillo = 1 + (dias / 30); // irá de 1 a 2
+
+    // Aplicar a la imagen
+    document.getElementById("miImagen").style.filter = `brightness(${brillo})`;
+  </script>
+</body>
+</html>
